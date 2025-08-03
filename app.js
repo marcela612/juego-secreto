@@ -3,7 +3,7 @@
 let amigos = [];
 
 function agregarAmigo () {
-    const input = document.getElementById("nombreAmigo");
+    const input = document.getElementById("amigo");
     const nombre = input.value.trim();
 
     if (nombre === "") {
@@ -18,13 +18,13 @@ function agregarAmigo () {
 
 function actualizarLista () {
     const lista = document.getElementById(listaAmigos);
-    lista.innerHTML = "";
+    lista.innerHTML = ""; // limpia la lista 
 
-    for (let amigo of amigos) {
+    amigos.forEach(amigo => {
         const li = document.createElement("li");
         li.textContent = amigo;
         lista.appendChild(li);
-    }
+    });
 }
 
 function sortearAmigo() {
@@ -39,4 +39,7 @@ function sortearAmigo() {
     const resultado = document.getElementById("resultado");
     resultado.innerHTML = `El amigo secreto es: <strong> ${seleccionado}</strong>`;
 }
+
+
+
 
