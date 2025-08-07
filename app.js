@@ -11,6 +11,12 @@ function agregarAmigo () {
         return;
     }
 
+    //Evitar nombres duplicados 
+    if  (amigos.includes(nombre)) {
+        alert("Este nombre ya esta en la lista.");
+        return;
+    }
+
     amigos.push(nombre);
     input.value = "";
     actualizarLista();
